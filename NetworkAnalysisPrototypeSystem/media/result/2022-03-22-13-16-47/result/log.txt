@@ -1,0 +1,21 @@
+2022-03-22 13:22:21.773113: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-03-22 13:22:21.782454: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2494130000 Hz
+2022-03-22 13:22:21.782780: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x560a82df40e0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2022-03-22 13:22:21.782809: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2022-03-22 13:22:21.914056: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 256000000 exceeds 10% of free system memory.
+2022-03-22 13:22:22.083207: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 256000000 exceeds 10% of free system memory.
+2022-03-22 13:22:22.144460: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 256000000 exceeds 10% of free system memory.
+2022-03-22 13:22:22.233417: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 256000000 exceeds 10% of free system memory.
+2022-03-22 13:22:22.819665: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 256000000 exceeds 10% of free system memory.
+Task: Local Popularity Prediction on Partition Level 1...
+Loading data...
+Data loaded using 0.10239338874816895 seconds.
+Start prediction...
+1/2 [==============>...............] - ETA: 0s - loss: 0.0136 - accuracy: 0.12502/2 [==============================] - ETA: 0s - loss: 0.0141 - accuracy: 0.12902/2 [==============================] - 1s 719ms/step - loss: 0.0141 - accuracy: 0.1290
+Prediciton done using 82.75380730628967 seconds.
+Statistics: 
+>> MSE: 0.014141792136915883
+>> RMSE: 0.11891926730734546
+>> MAE: 0.08669810435589861
+[{'type': 'image', 'title': 'Cumulative Distribution of MAE for Contents', 'description': 'Cumulative Distribution of MAE for Contents', 'data': 'avgregion_lev_1.png'}, {'type': 'table', 'title': 'Statistics Report', 'data': {'thead': ['Metrics', 'Values'], 'tbody': [['Data loaded time', '0.10239338874816895'], ['Prediction time', '82.75380730628967'], ['Mean Squared Error', '0.014141792136915883'], ['Root Mean Squared Error', '0.11891926730734546'], ['Mean Absolute Error', '0.08669810435589861']]}}]

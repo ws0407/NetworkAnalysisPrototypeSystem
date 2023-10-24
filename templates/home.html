@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>原型系统</title>
+    {% load static %}
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="icon" href="{% static 'dist/img/logo.png' %}" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{% static 'plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
+    <!-- Ekko Lightbox -->
+    <link rel="stylesheet" href="{% static 'plugins/ekko-lightbox/ekko-lightbox.css' %}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="{% static 'plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/home" class="nav-link active">主页</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/contact" class="nav-link">联系我们</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/help" class="nav-link">帮助</a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-comments"></i>
+          <span class="badge badge-danger navbar-badge">1</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{% static 'dist/img/thu_logo.png'%}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Manager
+                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">This is a test message.</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+        </div>
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item" style="background-color: #dcdccc">
+            <i class="fas fa-map-pin mr-2"></i> This is a pinned notice.
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            >>&nbsp;&nbsp;This is a test notice.
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            >>&nbsp;&nbsp; This is a test notice, too.
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">...</a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="fas fa-th-large"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="text-align: center">
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            个人主页
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="/logout" class="dropdown-item">
+            退出登录
+          </a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="position: fixed">
+    <!-- Brand Logo -->
+    <a href="/home" class="brand-link">
+      <img src="{% static 'dist/img/logo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light" style="font-size: 20px"><b>&nbsp;原型系统</b></span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{% static 'dist/img/thu_logo.png' %}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+            <a href="#" class="d-block"><b>{{ request.session.username }}</b></a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline" style="width: 230px">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="查找" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+          <li class="nav-item">
+            <a href="/home" class="nav-link active">
+              <i class="nav-icon fas fa-home"></i>
+              <p>
+                概览
+              </p>
+            </a>
+          </li>
+          <li class="nav-item" id="Feature-Mining">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-cubes"></i>
+              <p>
+                可扩展的特征挖掘
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" style="font-size: small">
+              <li class="nav-item">
+                <a href="/subtask/Flow Monitor Based Gauss Process" class="nav-link" id="Flow-Monitor-Based-Gauss-Process">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>基于深度高斯过程的可扩展特征流量预测</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item" id="Feature-Analysis">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-rocket"></i>
+              <p>
+                多维特征的关联分析
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" style="font-size: small">
+              <li class="nav-item">
+                <a href="/subtask/Network Traffic Classification" class="nav-link" id="Network-Traffic-Classification">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>基于多维特征关联分析的流量分类</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/subtask/Application Identification" class="nav-link" id="Application-Identification">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>网络应用识别</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/subtask/User Behavior Identification" class="nav-link" id="User-Behavior-Identification">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>用户行为识别</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item" id="Benchmark">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-cubes"></i>
+              <p>
+                规范性基准构建
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" style="font-size: small">
+              <li class="nav-item">
+                <a href="/subtask/BGP Anomaly Detection" class="nav-link" id="BGP-Anomaly-Detection">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>基于弱监督学习的BGP规范性基准系统</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="http://[2001:250:200:5::1:220]:60005/" target="_blank" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>恶意域名检测(DNS)</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-recycle"></i>
+              <p>
+                网络异常行为检测和预测
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" style="font-size: small">
+              <li class="nav-item">
+                <a href="http://166.111.68.233:43250/" target="_blank" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>网络流量异常检测</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="http://[2001:250:200:5::1:221]:60004/login" target="_blank" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>网络安全事件预测</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-balance-scale"></i>
+              <p>
+                网络异常行为追踪溯源与定位
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" style="font-size: small">
+              <li class="nav-item">
+                <a href="https://150.242.169.98:39527" target="_blank" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>网络异常行为追踪溯源与定位子系统</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!--<li class="nav-item">
+            <a href="/driver" class="nav-link">
+              <i class="nav-icon fas fa-cloud"></i>
+              <p>
+                Driver Management
+              </p>
+            </a>
+          </li>-->
+          <li class="nav-item" style="bottom: 5px;position: fixed;">
+            <a href="/status" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                服务器运行状态
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>系统概览</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/home">主页</a></li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <!-- overview -->
+    <!-- DONUT CHART -->
+    <section class="content-header" style="width: 100%; float: left">
+
+        <div class="card card-primary" style="width: 98%; float: left; left: 1%;">
+          <div class="card-header">
+
+            <h3 class="card-title">
+                <i class="fas fa-map"></i>
+                研究内容框图
+            </h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body" style="text-align: center">
+            <img src="{% static 'dist/img/研究内容框图.jpg' %}" style="max-width: 100%; max-height: 500px;">
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <div class="card card-olive" style="width: 98%; float: left; left: 1%;">
+          <div class="card-header">
+
+            <h3 class="card-title">
+                <i class="fas fa-map"></i>
+                原型系统示意图
+            </h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body" style="text-align: center">
+            <img src="{% static 'dist/img/原型系统原理图.png' %}" style="max-width: 100%; max-height: 500px;">
+          </div>
+          <!-- /.card-body -->
+        </div>
+
+        <div class="card card-info" style="width: 30%; float: left; left: 1%;">
+          <div class="card-header">
+
+            <h3 class="card-title">
+                <i class="fas fa-tachometer-alt"></i>
+                服务器状态
+            </h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+          </div>
+          <!-- /.card-body -->
+        </div>
+
+        <!-- PIE CHART -->
+        <div class="card card-primary" style="width: 30%; float: left; left: 2%;">
+          <div class="card-header">
+            <h3 class="card-title">
+                <i class="fas fa-book"></i>
+                任务统计
+            </h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <span id="calendar-tmp" style="display: none"></span>
+        <!-- Calendar -->
+        <div class="card" style="left: 3%; float: left;width: 36%">
+          <div class="card-header border-0 bg-success" style="height: 49px">
+
+            <h3 class="card-title">
+              <i class="far fa-calendar-alt"></i>
+              贡献度
+            </h3>
+            <!-- tools card -->
+            <div class="card-tools">
+              <button type="button" class="btn btn-success btn-sm" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-success btn-sm" data-card-widget="remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <!-- /. tools -->
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body pt-0">
+            <!--The calendar -->
+            <div id="calendar" style="width: 100%; height: 245px"></div>
+            <div style="bottom: -20px;">
+                <span style="float: right;font-size: 15px">&nbsp;&nbsp;多</span>
+                <div style="float: right; height: 25px; width: 15px; background-color: rgba(0, 180, 0, 1.0)"></div>
+                <div style="float: right; height: 25px; width: 15px; background-color: rgba(0, 180, 0, 0.9)"></div>
+                <div style="float: right; height: 25px; width: 15px; background-color: rgba(0, 180, 0, 0.8)"></div>
+                <div style="float: right; height: 25px; width: 15px; background-color: rgba(0, 180, 0, 0.7)"></div>
+                <div style="float: right; height: 25px; width: 15px; background-color: rgba(0, 180, 0, 0.6)"></div>
+                <div style="float: right; height: 25px; width: 15px; background-color: rgba(0, 180, 0, 0.5)"></div>
+                <div style="float: right; height: 25px; width: 15px; background-color: rgba(0, 180, 0, 0.4)"></div>
+                <div style="float: right; height: 25px; width: 15px; background-color: rgba(0, 180, 0, 0.3)"></div>
+                <div style="float: right; height: 25px; width: 15px; background-color: rgba(0, 180, 0, 0.2)"></div>
+                <div style="float: right; height: 25px; width: 15px; background-color: rgba(0, 180, 0, 0.1)"></div>
+                <span style="float: right;font-size: 15px">少&nbsp;&nbsp;</span>
+            </div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+    </section>
+     <!-- job-list -->
+    <section class="content">&nbsp;</section>
+    <section class="content" style="margin-top: -20px">
+        <!-- /.card -->
+        <div class="card">
+          <div class="card-header" style="background-color: #b8a2e0">
+            <h3 class="card-title" style="color: white">
+                <i class="fas fa-book"></i>
+                近期任务
+            </h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table class="table table-bordered table-striped" id="table-jobs">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>名称</th>
+                  <th>类别</th>
+                  <th>提交时间</th>
+                  <th>开始时间</th>
+                  <th>结束时间</th>
+                  <th style="text-align: center">运行状态</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for job in jobs %}
+                <tr>
+                  <td>{{ forloop.counter }}</td>
+                  <td><a href="/detail/{{ job.id }}">{{ job.name }}</a></td>
+                  <td>{{ job.type }}</td>
+                  <td>{{ job.submit_time }}</td>
+                  <td>{{ job.start_time }}</td>
+                  <td>{{ job.end_time }}</td>
+                  <td style="text-align: center">
+                      {% if job.status == 'error' %}
+                      <span style="width:60px" class="badge bg-danger">{{ job.status }}</span>
+                      {% elif job.status == 'waiting' %}
+                      <span style="width:60px" class="badge bg-secondary">{{ job.status }}</span>
+                      {% elif job.status == 'running' %}
+                      <span style="width:60px" class="badge bg-primary">{{ job.status }}</span>
+                      {% elif job.status == 'finished' %}
+                      <span style="width:60px" class="badge bg-success">{{ job.status }}</span>
+                      {% elif job.status == 'ready' %}
+                      <span style="width:60px" class="badge bg-info">{{ job.status }}</span>
+                      {% endif %}
+                  </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>#</th>
+                  <th>名称</th>
+                  <th>类别</th>
+                  <th>提交时间</th>
+                  <th>开始时间</th>
+                  <th>结束时间</th>
+                  <th style="text-align: center">运行状态</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div><!-- /.card-body -->
+        </div><!-- /.card -->
+    </section>
+    <!-- driver-list -->
+    <section class="content" style="margin-top: 40px">
+      <div class="card">
+      <div class="card-header" style="background-color: #757aD8">
+        <h3 class="card-title" style="color: white">
+            <i class="fas fa-tachometer-alt"></i>
+            服务器列表
+        </h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <table class="table table-bordered table-striped" id="table-drivers">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>服务器名称</th>
+              <th>IP:Port</th>
+              <th>类型</th>
+              <th>编辑时间</th>
+              <th style="text-align: center">运行状态</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for driver in drivers %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><a href="/status/{{ driver.id }}">{{ driver.name }}</a></td>
+                <td>{{ driver.ip }}:{{ driver.port }}</td>
+                <td>{{ driver.type }}</td>
+                <td>{{ driver.edit_time }}</td>
+                <td style="text-align: center">
+                  {% if driver.status == 'error' %}
+                  <span style="width:60px" class="badge bg-danger">{{ driver.status }}</span>
+                  {% elif driver.status == 'working' %}
+                  <span style="width:60px" class="badge bg-primary">{{ driver.status }}</span>
+                  {% elif driver.status == 'available' %}
+                  <span style="width:60px" class="badge bg-success">{{ driver.status }}</span>
+                  {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>#</th>
+              <th>服务器名称</th>
+              <th>IP:Port</th>
+              <th>类型</th>
+              <th>编辑时间</th>
+              <th style="text-align: center">运行状态</th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+    </section>
+
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 1.0.0-rc
+    </div>
+    <strong>Copyright &copy; 2018-2022 <a href="https://www.sigs.tsinghua.edu.cn/">SIGS.Tsinghua</a>.</strong> All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{% static 'plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+<!-- Bootstrap -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- DataTables  & Plugins -->
+<script src="{% static 'plugins/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
+<script src="{% static 'plugins/jszip/jszip.min.js' %}"></script>
+<script src="{% static 'plugins/pdfmake/pdfmake.min.js' %}"></script>
+<script src="{% static 'plugins/pdfmake/vfs_fonts.js' %}"></script>
+<script src="{% static 'plugins/datatables-buttons/js/buttons.html5.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-buttons/js/buttons.print.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-buttons/js/buttons.colVis.min.js' %}"></script>
+<!-- Ekko Lightbox -->
+<script src="{% static 'plugins/ekko-lightbox/ekko-lightbox.min.js' %}"></script>
+<script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+<!-- Filterizr-->
+<script src="{% static 'plugins/filterizr/jquery.filterizr.min.js' %}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- ChartJS -->
+<script src="{% static 'plugins/chart.js/Chart.min.js' %}"></script>
+<!-- date range picker -->
+<script src="{% static 'plugins/moment/moment.min.js' %}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{% static 'plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+<script>
+    $('#table-jobs').DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      {#"buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]#}
+    }).buttons().container();{#.appendTo('#table-jobs_wrapper .col-md-6:eq(0)');#}
+    $('#table-drivers').DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      {#"buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]#}
+    }).buttons().container(); {#.appendTo('#table-drivers_wrapper .col-md-6:eq(0)');#}
+</script>
+<!-- Calendar -->
+<script>
+$(function () {
+  // The Calender
+  $('#calendar').datetimepicker({
+    format: 'L',
+    inline: true
+  })
+})
+</script>
+<script>
+    function autoRun(){
+        var calendar = document.getElementById('calendar');
+        var header = calendar.getElementsByClassName('picker-switch')[0];
+        var text = document.getElementById('calendar-tmp');
+        if(header.innerText !== text.innerText){
+            var table = calendar.getElementsByTagName('tbody')[0];
+            text.innerText = header.innerText;
+            var days = table.getElementsByTagName('td');
+            var year = days[10].getAttribute('data-day').substring(6);
+            var month = days[10].getAttribute('data-day').substring(0,2);
+            for(var i = 0; i < days.length; i++){
+                var class_attr = days[i].getAttribute('class');
+                if(class_attr.indexOf('old') === -1 && class_attr.indexOf('new') === -1){
+                    var day = days[i].getAttribute('data-day').substring(3,5);
+                    var count = 0
+
+                    {% for job in jobs %}
+                        var start_time = '{{ job.start_time }}';
+                        if(start_time.substring(0, 10) === year + '-' + month+'-'+day)
+                            count++;
+                    {% endfor %}
+
+                    var opacity = count / 10;
+                        days[i].setAttribute('style', 'background-color: rgba(0, 255, 0, '+ opacity.toString() +');color:black');
+                }
+            }
+        }
+    }
+    setInterval("autoRun()", 500);
+</script>
+
+
+<!-- ChartJS -->
+<script>
+  $(function () {
+    /* ChartJS
+     * -------
+     * Here we will create a few charts using ChartJS
+     */
+
+    //--------------
+    //- AREA CHART -
+    //--------------
+    //-------------
+    //- DONUT CHART -
+    //-------------
+    // Get context with jQuery - using jQuery's .get() method.
+    var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
+    var driver_status = new Array(0);
+      {% for d in driver_status %}
+        driver_status.push('{{ d }}')
+      {% endfor %}
+    var donutData = {
+      labels: driver_status,
+      datasets: [
+        {
+          data: {{ driver_nums }},
+          backgroundColor : ['#00a65a', '#3c8dbc', '#d2d6de'],
+        }
+      ]
+    }
+    var donutOptions     = {
+      maintainAspectRatio : false,
+      responsive : true,
+    }
+    //Create pie or douhnut chart
+    // You can switch between pie and douhnut using the method below.
+    new Chart(donutChartCanvas, {
+      type: 'doughnut',
+      data: donutData,
+      options: donutOptions
+    })
+
+    //-------------
+    //- PIE CHART -
+    //-------------
+    // Get context with jQuery - using jQuery's .get() method.
+    var functions = new Array(0);
+      {% for f in functions %}
+        functions.push("{{ f.name_zh }}");
+      {% endfor %}
+    var pieData = {
+      labels: functions,
+      datasets: [
+        {
+          data: {{job_nums}},
+          backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+        }
+      ]
+    }
+    var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+    var pieOptions = {
+      maintainAspectRatio : false,
+      responsive : true,
+    }
+    //Create pie or douhnut chart
+    // You can switch between pie and douhnut using the method below.
+    new Chart(pieChartCanvas, {
+      type: 'pie',
+      data: pieData,
+      options: pieOptions
+    })
+  })
+</script>
+<!-- ionicons -->
+{#<script src="{% static 'plugins/ionicons/js/ionicons.esm.js' %}">#}
+{#<script src="{% static 'plugins/ionicons/js/ionicons.js' %}"></script>#}
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

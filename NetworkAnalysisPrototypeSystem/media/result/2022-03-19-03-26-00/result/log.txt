@@ -1,0 +1,99 @@
+RUN EBSNN...
+(6400, 4800)
+              precision    recall  f1-score   support
+
+          JD      1.00      1.00      1.00        13
+          NCMusic      1.00      1.00      1.00        13
+          TED      1.00      0.67      0.80         6
+          Amazon      1.00      1.00      1.00         6
+          Baidu      0.86      1.00      0.92         6
+          Bing      1.00      1.00      1.00         4
+          Douban      1.00      1.00      1.00        11
+          Facebook      1.00      1.00      1.00         6
+          Google      1.00      1.00      1.00         4
+          IMDb      1.00      1.00      1.00         7
+         Instagram      0.80      1.00      0.89         4
+         iQIYI      1.00      1.00      1.00         6
+         QQMail      1.00      1.00      1.00         4
+         Reddit      1.00      1.00      1.00         5
+         Taobao      1.00      1.00      1.00         3
+         Tieba      1.00      1.00      1.00         6
+         Twitter      1.00      1.00      1.00         2
+         SinaWeibo      1.00      1.00      1.00         5
+         Youku      1.00      1.00      1.00        10
+         Youtube      1.00      1.00      1.00         7
+
+    accuracy                           0.98       128
+   macro_avg       0.98      0.98      0.98       128
+weighted_avg       0.99      0.98      0.98       128
+
+[{'type': 'image', 'title': 'Confusion Matrix', 'description': 'Null', 'data': 'c_m.png'}, {'type': 'table', 'title': 'Classification Report', 'data': {'thead': ['#', 'Metrics', 'precision', 'recall', 'f1-score', 'support'], 'tbody': [['0', 'JD', '1.00', '1.00', '1.00', '13'], ['1', 'NCMusic', '1.00', '1.00', '1.00', '13'], ['2', 'TED', '1.00', '0.67', '0.80', '6'], ['3', 'Amazon', '1.00', '1.00', '1.00', '6'], ['4', 'Baidu', '0.86', '1.00', '0.92', '6'], ['5', 'Bing', '1.00', '1.00', '1.00', '4'], ['6', 'Douban', '1.00', '1.00', '1.00', '11'], ['7', 'Facebook', '1.00', '1.00', '1.00', '6'], ['8', 'Google', '1.00', '1.00', '1.00', '4'], ['9', 'IMDb', '1.00', '1.00', '1.00', '7'], ['10', 'Instagram', '0.80', '1.00', '0.89', '4'], ['11', 'iQIYI', '1.00', '1.00', '1.00', '6'], ['12', 'QQMail', '1.00', '1.00', '1.00', '4'], ['13', 'Reddit', '1.00', '1.00', '1.00', '5'], ['14', 'Taobao', '1.00', '1.00', '1.00', '3'], ['15', 'Tieba', '1.00', '1.00', '1.00', '6'], ['16', 'Twitter', '1.00', '1.00', '1.00', '2'], ['17', 'SinaWeibo', '1.00', '1.00', '1.00', '5'], ['18', 'Youku', '1.00', '1.00', '1.00', '10'], ['19', 'Youtube', '1.00', '1.00', '1.00', '7'], ['20', '', '', '', '', ''], ['21', 'accuracy', '', '', '0.98', '128'], ['22', 'macro_avg', '0.98', '0.98', '0.98', '128'], ['23', 'weighted_avg', '0.99', '0.98', '0.98', '128'], ['24', '', '', '', '', '']]}}]
+RUN EBSNN...
+(6400, 4800)
+              precision    recall  f1-score   support
+
+          JD      1.00      1.00      1.00        13
+          NCMusic      1.00      1.00      1.00        13
+          TED      1.00      0.67      0.80         6
+          Amazon      1.00      1.00      1.00         6
+          Baidu      0.86      1.00      0.92         6
+          Bing      1.00      1.00      1.00         4
+          Douban      1.00      1.00      1.00        11
+          Facebook      1.00      1.00      1.00         6
+          Google      1.00      1.00      1.00         4
+          IMDb      1.00      1.00      1.00         7
+         Instagram      0.80      1.00      0.89         4
+         iQIYI      1.00      1.00      1.00         6
+         QQMail      1.00      1.00      1.00         4
+         Reddit      1.00      1.00      1.00         5
+         Taobao      1.00      1.00      1.00         3
+         Tieba      1.00      1.00      1.00         6
+         Twitter      1.00      1.00      1.00         2
+         SinaWeibo      1.00      1.00      1.00         5
+         Youku      1.00      1.00      1.00        10
+         Youtube      1.00      1.00      1.00         7
+
+    accuracy                           0.98       128
+   macro_avg       0.98      0.98      0.98       128
+weighted_avg       0.99      0.98      0.98       128
+
+[{'type': 'image', 'title': 'Confusion Matrix', 'description': 'Null', 'data': 'c_m.png'}, {'type': 'table', 'title': 'Classification Report', 'data': {'thead': ['#', 'Metrics', 'precision', 'recall', 'f1-score', 'support'], 'tbody': [['0', 'JD', '1.00', '1.00', '1.00', '13'], ['1', 'NCMusic', '1.00', '1.00', '1.00', '13'], ['2', 'TED', '1.00', '0.67', '0.80', '6'], ['3', 'Amazon', '1.00', '1.00', '1.00', '6'], ['4', 'Baidu', '0.86', '1.00', '0.92', '6'], ['5', 'Bing', '1.00', '1.00', '1.00', '4'], ['6', 'Douban', '1.00', '1.00', '1.00', '11'], ['7', 'Facebook', '1.00', '1.00', '1.00', '6'], ['8', 'Google', '1.00', '1.00', '1.00', '4'], ['9', 'IMDb', '1.00', '1.00', '1.00', '7'], ['10', 'Instagram', '0.80', '1.00', '0.89', '4'], ['11', 'iQIYI', '1.00', '1.00', '1.00', '6'], ['12', 'QQMail', '1.00', '1.00', '1.00', '4'], ['13', 'Reddit', '1.00', '1.00', '1.00', '5'], ['14', 'Taobao', '1.00', '1.00', '1.00', '3'], ['15', 'Tieba', '1.00', '1.00', '1.00', '6'], ['16', 'Twitter', '1.00', '1.00', '1.00', '2'], ['17', 'SinaWeibo', '1.00', '1.00', '1.00', '5'], ['18', 'Youku', '1.00', '1.00', '1.00', '10'], ['19', 'Youtube', '1.00', '1.00', '1.00', '7'], ['20', '', '', '', '', ''], ['21', 'accuracy', '', '', '0.98', '128'], ['22', 'macro_avg', '0.98', '0.98', '0.98', '128'], ['23', 'weighted_avg', '0.99', '0.98', '0.98', '128'], ['24', '', '', '', '', '']]}}]
+RUN EBSNN...
+Traceback (most recent call last):
+  File "/tmp/EBSNN/test_ebsnn.py", line 132, in <module>
+    test_ebsnn(1)
+  File "/tmp/EBSNN/test_ebsnn.py", line 79, in test_ebsnn
+    np.load(ROOT_DIR + 'data/sample.npy'),
+  File "/root/anaconda3/envs/EBSNN-3_7/lib/python3.7/site-packages/numpy/lib/npyio.py", line 417, in load
+    fid = stack.enter_context(open(os_fspath(file), "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/EBSNN/data/sample.npy'
+RUN EBSNN...
+(6400, 4800)
+              precision    recall  f1-score   support
+
+          JD      1.00      1.00      1.00        13
+          NCMusic      1.00      1.00      1.00        13
+          TED      1.00      0.67      0.80         6
+          Amazon      1.00      1.00      1.00         6
+          Baidu      0.86      1.00      0.92         6
+          Bing      1.00      1.00      1.00         4
+          Douban      1.00      1.00      1.00        11
+          Facebook      1.00      1.00      1.00         6
+          Google      1.00      1.00      1.00         4
+          IMDb      1.00      1.00      1.00         7
+         Instagram      0.80      1.00      0.89         4
+         iQIYI      1.00      1.00      1.00         6
+         QQMail      1.00      1.00      1.00         4
+         Reddit      1.00      1.00      1.00         5
+         Taobao      1.00      1.00      1.00         3
+         Tieba      1.00      1.00      1.00         6
+         Twitter      1.00      1.00      1.00         2
+         SinaWeibo      1.00      1.00      1.00         5
+         Youku      1.00      1.00      1.00        10
+         Youtube      1.00      1.00      1.00         7
+
+    accuracy                           0.98       128
+   macro_avg       0.98      0.98      0.98       128
+weighted_avg       0.99      0.98      0.98       128
+
+[{'type': 'image', 'title': 'Confusion Matrix', 'description': 'Null', 'data': 'c_m.png'}, {'type': 'table', 'title': 'Classification Report', 'data': {'thead': ['#', 'Metrics', 'precision', 'recall', 'f1-score', 'support'], 'tbody': [['0', 'JD', '1.00', '1.00', '1.00', '13'], ['1', 'NCMusic', '1.00', '1.00', '1.00', '13'], ['2', 'TED', '1.00', '0.67', '0.80', '6'], ['3', 'Amazon', '1.00', '1.00', '1.00', '6'], ['4', 'Baidu', '0.86', '1.00', '0.92', '6'], ['5', 'Bing', '1.00', '1.00', '1.00', '4'], ['6', 'Douban', '1.00', '1.00', '1.00', '11'], ['7', 'Facebook', '1.00', '1.00', '1.00', '6'], ['8', 'Google', '1.00', '1.00', '1.00', '4'], ['9', 'IMDb', '1.00', '1.00', '1.00', '7'], ['10', 'Instagram', '0.80', '1.00', '0.89', '4'], ['11', 'iQIYI', '1.00', '1.00', '1.00', '6'], ['12', 'QQMail', '1.00', '1.00', '1.00', '4'], ['13', 'Reddit', '1.00', '1.00', '1.00', '5'], ['14', 'Taobao', '1.00', '1.00', '1.00', '3'], ['15', 'Tieba', '1.00', '1.00', '1.00', '6'], ['16', 'Twitter', '1.00', '1.00', '1.00', '2'], ['17', 'SinaWeibo', '1.00', '1.00', '1.00', '5'], ['18', 'Youku', '1.00', '1.00', '1.00', '10'], ['19', 'Youtube', '1.00', '1.00', '1.00', '7'], ['20', '', '', '', '', ''], ['21', 'accuracy', '', '', '0.98', '128'], ['22', 'macro_avg', '0.98', '0.98', '0.98', '128'], ['23', 'weighted_avg', '0.99', '0.98', '0.98', '128'], ['24', '', '', '', '', '']]}}]

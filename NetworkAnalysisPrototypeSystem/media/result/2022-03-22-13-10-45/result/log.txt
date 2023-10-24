@@ -1,0 +1,221 @@
+nohup: ignoring input
+/tmp/BGPAD/test/features4788.csv
+/tmp/BGPAD/test/features4761.csv
+/tmp/BGPAD/test/features200759.csv
+/tmp/BGPAD/test/features9121.csv
+              MPL  MOAS_prefix_num  ...  longer_bigger_11  shorter_bigger_11
+1.434055e+09    0              0.0  ...               0.0                0.0
+1.434055e+09    0              0.0  ...               0.0                0.0
+1.434056e+09    0              0.0  ...               0.0                0.0
+1.434056e+09    0              0.0  ...               0.0                0.0
+1.434056e+09    0              0.0  ...               0.0                0.0
+...           ...              ...  ...               ...                ...
+1.103923e+09    6            740.0  ...               0.0                0.0
+1.103923e+09    4            766.0  ...               0.0                0.0
+1.103923e+09    4           1200.0  ...               0.0                0.0
+1.103923e+09    0           1083.0  ...               0.0                0.0
+1.103923e+09    5            622.0  ...               0.0                0.0
+
+[5760 rows x 87 columns]
+83
+1411
+(5760, 83)
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:03<00:11,  3.80s/it] 50%|█████     | 2/4 [00:22<00:24, 12.33s/it] 75%|███████▌  | 3/4 [01:00<00:24, 24.39s/it]100%|██████████| 4/4 [01:54<00:00, 36.09s/it]100%|██████████| 4/4 [01:54<00:00, 28.72s/it]
+/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/torch/nn/modules/container.py:100: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  input = module(input)
+(5644, 30, 83)
+              precision    recall  f1-score   support
+
+      Normal       0.97      0.85      0.90      4570
+   Abnomarl        0.57      0.88      0.70      1074
+
+    accuracy                           0.85      5644
+   macro avg       0.77      0.86      0.80      5644
+weighted avg       0.89      0.85      0.86      5644
+
+1411
+(5760, 83)
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:06<00:19,  6.56s/it] 50%|█████     | 2/4 [00:30<00:33, 16.79s/it] 75%|███████▌  | 3/4 [01:09<00:26, 26.89s/it]100%|██████████| 4/4 [02:03<00:00, 37.67s/it]100%|██████████| 4/4 [02:03<00:00, 30.90s/it]
+/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/torch/nn/modules/container.py:100: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  input = module(input)
+(5644, 30, 83)
+              precision    recall  f1-score   support
+
+      Normal       0.85      0.99      0.92      4570
+   Abnomarl        0.86      0.28      0.42      1074
+
+    accuracy                           0.85      5644
+   macro avg       0.86      0.63      0.67      5644
+weighted avg       0.85      0.85      0.82      5644
+
+1411
+(5760, 83)
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:03<00:11,  3.71s/it] 50%|█████     | 2/4 [00:15<00:17,  8.58s/it] 75%|███████▌  | 3/4 [00:35<00:13, 13.90s/it]100%|██████████| 4/4 [01:04<00:00, 19.56s/it]100%|██████████| 4/4 [01:04<00:00, 16.04s/it]
+/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/torch/nn/modules/container.py:100: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  input = module(input)
+(5644, 30, 83)
+              precision    recall  f1-score   support
+
+      Normal       0.81      1.00      0.90      4570
+   Abnomarl        1.00      0.00      0.01      1074
+
+    accuracy                           0.81      5644
+   macro avg       0.91      0.50      0.45      5644
+weighted avg       0.85      0.81      0.73      5644
+
+1411
+(5760, 83)
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:03<00:11,  3.84s/it] 50%|█████     | 2/4 [00:15<00:16,  8.29s/it] 75%|███████▌  | 3/4 [00:35<00:13, 13.75s/it]100%|██████████| 4/4 [01:03<00:00, 19.51s/it]100%|██████████| 4/4 [01:03<00:00, 15.96s/it]
+/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/torch/nn/modules/container.py:100: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  input = module(input)
+(5644, 30, 83)
+              precision    recall  f1-score   support
+
+      Normal       0.94      0.90      0.92      4570
+   Abnomarl        0.64      0.74      0.69      1074
+
+    accuracy                           0.87      5644
+   macro avg       0.79      0.82      0.80      5644
+weighted avg       0.88      0.87      0.88      5644
+
+1411
+(5760, 83)
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:03<00:10,  3.50s/it] 50%|█████     | 2/4 [00:15<00:16,  8.33s/it] 75%|███████▌  | 3/4 [00:34<00:13, 13.55s/it]100%|██████████| 4/4 [01:03<00:00, 19.39s/it]100%|██████████| 4/4 [01:03<00:00, 15.83s/it]
+/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/torch/nn/modules/container.py:100: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  input = module(input)
+(5644, 30, 83)
+              precision    recall  f1-score   support
+
+      Normal       0.95      0.86      0.90      4570
+   Abnomarl        0.57      0.82      0.68      1074
+
+    accuracy                           0.85      5644
+   macro avg       0.76      0.84      0.79      5644
+weighted avg       0.88      0.85      0.86      5644
+
+Traceback (most recent call last):
+  File "/tmp/BGPAD/BGP_Anomaly_detection/Anomaly_Detector.py", line 568, in <module>
+    detector.plot_test_route_leak()
+  File "/tmp/BGPAD/BGP_Anomaly_detection/Anomaly_Detector.py", line 388, in plot_test_route_leak
+    pred = pd.read_csv("../result_doc/pred_true_route_leak_train.csv")
+  File "/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+FileNotFoundError: [Errno 2] No such file or directory: '../result_doc/pred_true_route_leak_train.csv'
+Traceback (most recent call last):
+  File "/tmp/BGPAD/BGP_Anomaly_detection/Anomaly_Detector.py", line 10, in <module>
+    from Self_Attention_LSTM import SA_LSTM
+ModuleNotFoundError: No module named 'Self_Attention_LSTM'
+/tmp/BGPAD/test/features4788.csv
+/tmp/BGPAD/test/features4761.csv
+/tmp/BGPAD/test/features200759.csv
+/tmp/BGPAD/test/features9121.csv
+              MPL  MOAS_prefix_num  ...  longer_bigger_11  shorter_bigger_11
+1.434055e+09    0              0.0  ...               0.0                0.0
+1.434055e+09    0              0.0  ...               0.0                0.0
+1.434056e+09    0              0.0  ...               0.0                0.0
+1.434056e+09    0              0.0  ...               0.0                0.0
+1.434056e+09    0              0.0  ...               0.0                0.0
+...           ...              ...  ...               ...                ...
+1.103923e+09    6            740.0  ...               0.0                0.0
+1.103923e+09    4            766.0  ...               0.0                0.0
+1.103923e+09    4           1200.0  ...               0.0                0.0
+1.103923e+09    0           1083.0  ...               0.0                0.0
+1.103923e+09    5            622.0  ...               0.0                0.0
+
+[5760 rows x 87 columns]
+83
+1411
+(5760, 83)
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:06<00:20,  6.69s/it] 50%|█████     | 2/4 [00:46<00:52, 26.44s/it] 75%|███████▌  | 3/4 [02:04<00:49, 49.88s/it]100%|██████████| 4/4 [03:54<00:00, 73.41s/it]100%|██████████| 4/4 [03:54<00:00, 58.55s/it]
+/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/torch/nn/modules/container.py:100: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  input = module(input)
+(5644, 30, 83)
+              precision    recall  f1-score   support
+
+      Normal       0.97      0.85      0.90      4570
+    Abnomal        0.57      0.88      0.70      1074
+
+    accuracy                           0.85      5644
+   macro avg       0.77      0.86      0.80      5644
+weighted avg       0.89      0.85      0.86      5644
+
+1411
+(5760, 83)
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:03<00:11,  3.83s/it] 50%|█████     | 2/4 [00:45<00:52, 26.22s/it] 75%|███████▌  | 3/4 [02:04<00:50, 50.19s/it]100%|██████████| 4/4 [03:55<00:00, 74.12s/it]100%|██████████| 4/4 [03:55<00:00, 58.81s/it]
+/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/torch/nn/modules/container.py:100: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  input = module(input)
+(5644, 30, 83)
+              precision    recall  f1-score   support
+
+      Normal       0.85      0.99      0.92      4570
+    Abnomal        0.86      0.28      0.42      1074
+
+    accuracy                           0.85      5644
+   macro avg       0.86      0.63      0.67      5644
+weighted avg       0.85      0.85      0.82      5644
+
+1411
+(5760, 83)
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:03<00:10,  3.46s/it] 50%|█████     | 2/4 [00:15<00:16,  8.50s/it] 75%|███████▌  | 3/4 [00:36<00:14, 14.21s/it]100%|██████████| 4/4 [01:05<00:00, 20.25s/it]100%|██████████| 4/4 [01:05<00:00, 16.50s/it]
+/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/torch/nn/modules/container.py:100: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  input = module(input)
+(5644, 30, 83)
+              precision    recall  f1-score   support
+
+      Normal       0.81      1.00      0.90      4570
+    Abnomal        1.00      0.00      0.01      1074
+
+    accuracy                           0.81      5644
+   macro avg       0.91      0.50      0.45      5644
+weighted avg       0.85      0.81      0.73      5644
+
+1411
+(5760, 83)
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:03<00:11,  3.85s/it] 50%|█████     | 2/4 [00:15<00:17,  8.73s/it] 75%|███████▌  | 3/4 [00:35<00:13, 13.83s/it]100%|██████████| 4/4 [01:04<00:00, 19.62s/it]100%|██████████| 4/4 [01:04<00:00, 16.10s/it]
+/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/torch/nn/modules/container.py:100: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  input = module(input)
+(5644, 30, 83)
+              precision    recall  f1-score   support
+
+      Normal       0.94      0.90      0.92      4570
+    Abnomal        0.64      0.74      0.69      1074
+
+    accuracy                           0.87      5644
+   macro avg       0.79      0.82      0.80      5644
+weighted avg       0.88      0.87      0.88      5644
+
+1411
+(5760, 83)
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:03<00:11,  3.70s/it] 50%|█████     | 2/4 [00:15<00:17,  8.52s/it] 75%|███████▌  | 3/4 [00:35<00:13, 13.68s/it]100%|██████████| 4/4 [01:03<00:00, 19.33s/it]100%|██████████| 4/4 [01:03<00:00, 15.85s/it]
+/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/torch/nn/modules/container.py:100: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  input = module(input)
+/root/anaconda3/envs/BGPAD-3_7/lib/python3.7/site-packages/pandas/core/indexing.py:1732: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  self._setitem_single_block(indexer, value, name)
+(5644, 30, 83)
+              precision    recall  f1-score   support
+
+      Normal       0.95      0.86      0.90      4570
+    Abnomal        0.57      0.82      0.68      1074
+
+    accuracy                           0.85      5644
+   macro avg       0.76      0.84      0.79      5644
+weighted avg       0.88      0.85      0.86      5644
+
+[{'type': 'table', 'title': 'prefix_hijackResults', 'data': {'thead': ['Metrics', 'precision', 'recall', 'f1-score', 'support'], 'tbody': [['Normal', '0.97', '0.85', '0.90', '4570'], ['Abnomal', '0.57', '0.88', '0.70', '1074'], ['', '', '', '', ''], ['accuracy', '', '', '0.85', '5644'], ['macro', 'avg', '0.77', '0.86', '0.80', '5644'], ['weighted', 'avg', '0.89', '0.85', '0.86', '5644'], ['', '', '', '', '']]}}, {'type': 'table', 'title': 'route_leakResults', 'data': {'thead': ['Metrics', 'precision', 'recall', 'f1-score', 'support'], 'tbody': [['Normal', '0.85', '0.99', '0.92', '4570'], ['Abnomal', '0.86', '0.28', '0.42', '1074'], ['', '', '', '', ''], ['accuracy', '', '', '0.85', '5644'], ['macro', 'avg', '0.86', '0.63', '0.67', '5644'], ['weighted', 'avg', '0.85', '0.85', '0.82', '5644'], ['', '', '', '', '']]}}, {'type': 'table', 'title': 'breakoutResults', 'data': {'thead': ['Metrics', 'precision', 'recall', 'f1-score', 'support'], 'tbody': [['Normal', '0.81', '1.00', '0.90', '4570'], ['Abnomal', '1.00', '0.00', '0.01', '1074'], ['', '', '', '', ''], ['accuracy', '', '', '0.81', '5644'], ['macro', 'avg', '0.91', '0.50', '0.45', '5644'], ['weighted', 'avg', '0.85', '0.81', '0.73', '5644'], ['', '', '', '', '']]}}, {'type': 'table', 'title': 'edgeResults', 'data': {'thead': ['Metrics', 'precision', 'recall', 'f1-score', 'support'], 'tbody': [['Normal', '0.94', '0.90', '0.92', '4570'], ['Abnomal', '0.64', '0.74', '0.69', '1074'], ['', '', '', '', ''], ['accuracy', '', '', '0.87', '5644'], ['macro', 'avg', '0.79', '0.82', '0.80', '5644'], ['weighted', 'avg', '0.88', '0.87', '0.88', '5644'], ['', '', '', '', '']]}}, {'type': 'table', 'title': 'defconResults', 'data': {'thead': ['Metrics', 'precision', 'recall', 'f1-score', 'support'], 'tbody': [['Normal', '0.95', '0.86', '0.90', '4570'], ['Abnomal', '0.57', '0.82', '0.68', '1074'], ['', '', '', '', ''], ['accuracy', '', '', '0.85', '5644'], ['macro', 'avg', '0.76', '0.84', '0.79', '5644'], ['weighted', 'avg', '0.88', '0.85', '0.86', '5644'], ['', '', '', '', '']]}}, {'type': 'image', 'title': 'Anomaly detection results', 'description': 'Null', 'data': 'case_study.png'}]

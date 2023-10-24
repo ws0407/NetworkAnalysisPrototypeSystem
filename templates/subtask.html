@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prototype System</title>
+    {% load static %}
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+    <link rel="icon" href="{% static 'dist/img/logo.png' %}" type="image/x-icon">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{% static 'plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
+    <!-- Ekko Lightbox -->
+    <link rel="stylesheet" href="{% static 'plugins/ekko-lightbox/ekko-lightbox.css' %}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="{% static 'plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+    <!-- Markdown code Bright -->
+    <link rel="stylesheet" type="text/css" href="{% static 'dist/css/code.css' %}">
+<style type="text/css">
+    .highcharts-data-table table {
+        font-family: Verdana, sans-serif;
+        border-collapse: collapse;
+        border: 1px solid #ebebeb;
+        margin: 10px auto;
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .highcharts-data-table caption {
+        padding: 1em 0;
+        font-size: 1.2em;
+        color: #555;
+    }
+
+    .highcharts-data-table th {
+        font-weight: 600;
+        padding: 0.5em;
+    }
+
+    .highcharts-data-table td,
+    .highcharts-data-table th,
+    .highcharts-data-table caption {
+        padding: 0.5em;
+    }
+
+    .highcharts-data-table thead tr,
+    .highcharts-data-table tr:nth-child(even) {
+        background: #f8f8f8;
+    }
+
+    .highcharts-data-table tr:hover {
+        background: #f1f7ff;
+    }
+</style>
+<style>
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  left: 100px;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+}
+
+/* The Close Button */
+.close {
+  text-align: right;
+  color: #000;
+  font-size: 28px;
+  font-weight: bold;
+  position: relative;
+  top: -25px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/home" class="nav-link">主页</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/contact" class="nav-link">联系我们</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/help" class="nav-link">帮助</a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-comments"></i>
+          <span class="badge badge-danger navbar-badge">1</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{% static 'dist/img/thu_logo.png'%}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Manager
+                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">This is a test message.</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+        </div>
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item" style="background-color: #dcdccc">
+            <i class="fas fa-map-pin mr-2"></i> This is a pinned notice.
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            >>&nbsp;&nbsp;This is a test notice.
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            >>&nbsp;&nbsp; This is a test notice, too.
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">...</a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="fas fa-th-large"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="text-align: center">
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            个人主页
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="/logout" class="dropdown-item">
+            退出登录
+          </a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="position: fixed">
+    <!-- Brand Logo -->
+    <a href="/home" class="brand-link">
+      <img src="{% static 'dist/img/logo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light" style="font-size: 20px"><b>&nbsp;原型系统</b></span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{% static 'dist/img/thu_logo.png' %}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+            <a href="#" class="d-block"><b>{{ request.session.username }}</b></a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline" style="width: 230px">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="查找" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+          <li class="nav-item">
+            <a href="/home" class="nav-link">
+              <i class="nav-icon fas fa-home"></i>
+              <p>
+                概览
+              </p>
+            </a>
+          </li>
+          <li class="nav-item" id="Feature-Mining">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-cubes"></i>
+              <p>
+                可扩展的特征挖掘
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" style="font-size: small">
+              <li class="nav-item">
+                <a href="/subtask/Flow Monitor Based Gauss Process" class="nav-link" id="Flow-Monitor-Based-Gauss-Process">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>基于深度高斯过程的可扩展特征流量预测</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item" id="Feature-Analysis">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-rocket"></i>
+              <p>
+                多维特征的关联分析
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" style="font-size: small">
+              <li class="nav-item">
+                <a href="/subtask/Network Traffic Classification" class="nav-link" id="Network-Traffic-Classification">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>基于多维特征关联分析的流量分类</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/subtask/Application Identification" class="nav-link" id="Application-Identification">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>网络应用识别</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/subtask/User Behavior Identification" class="nav-link" id="User-Behavior-Identification">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>用户行为识别</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item" id="Benchmark">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-cubes"></i>
+              <p>
+                规范性基准构建
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" style="font-size: small">
+              <li class="nav-item">
+                <a href="/subtask/BGP Anomaly Detection" class="nav-link" id="BGP-Anomaly-Detection">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>基于弱监督学习的BGP规范性基准系统</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="http://[2001:250:200:5::1:220]:60005/" target="_blank" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>恶意域名检测(DNS)</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-recycle"></i>
+              <p>
+                网络异常行为检测和预测
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" style="font-size: small">
+              <li class="nav-item">
+                <a href="http://166.111.68.233:43250/" target="_blank" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>网络流量异常检测</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="http://[2001:250:200:5::1:221]:60004/login" target="_blank" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>网络安全事件预测</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-balance-scale"></i>
+              <p>
+                网络异常行为追踪溯源与定位
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" style="font-size: small">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>网络异常行为追踪溯源与定位子系统</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!--<li class="nav-item">
+            <a href="/driver" class="nav-link">
+              <i class="nav-icon fas fa-cloud"></i>
+              <p>
+                Driver Management
+              </p>
+            </a>
+          </li>-->
+          <li class="nav-item" style="bottom: 5px;position: fixed;">
+            <a href="/status" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                服务器运行状态
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>{{ function.name_zh }}</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/home">主页</a></li>
+              <li class="breadcrumb-item active">{{ function.name_zh }}</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <section class="content">
+
+    <div class="card card-primary card-outline card-tabs">
+      <div class="card-header p-0 pt-1 border-bottom-0">
+        <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
+
+          <li class="nav-item">
+            <a class="nav-link active" id="custom-description-tab" data-toggle="pill" href="#custom-tabs-four-description" role="tab" aria-controls="custom-tabs-four-description" aria-selected="false">任务介绍</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="custom-code-tab" data-toggle="pill" href="#custom-tabs-four-code" role="tab" aria-controls="custom-tabs-four-code" aria-selected="false">源代码</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="custom-tasks-tab" data-toggle="pill" href="#custom-tabs-four-tasks" role="tab" aria-controls="custom-tabs-four-tasks" aria-selected="false">任务列表</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="custom-new-tab" data-toggle="pill" href="#custom-tabs-four-new" role="tab" aria-controls="custom-tabs-four-new" aria-selected="false">新增任务</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <div class="tab-content" id="custom-tabs-three-tabContent">
+          <div class="tab-pane fade show active" id="custom-tabs-four-description" role="tabpanel" aria-labelledby="custom-description-tab">
+                  {{ function.markdown | safe }}
+          </div>
+          <div class="tab-pane fade" id="custom-tabs-four-code" role="tabpanel" aria-labelledby="custom-code-tab">
+                  {{ function.code | safe }}
+          </div>
+          <div class="tab-pane fade" id="custom-tabs-four-tasks" role="tabpanel" aria-labelledby="custom-tasks-tab">
+              <table class="table table-bordered table-striped" id="table-jobs">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>名称</th>
+                  <th>提交时间</th>
+                  <th>开始时间</th>
+                  <th>结束时间</th>
+                  <th style="text-align: center">运行状态</th>
+                  <th style="text-align: center">运行结果</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for job in jobs %}
+                <tr>
+                  <td>{{ forloop.counter }}</td>
+                  <td>{{ job.name }}</td>
+                  <td>{{ job.submit_time }}</td>
+                  <td>{{ job.start_time }}</td>
+                  <td>{{ job.end_time }}</td>
+                  <td style="text-align: center">
+                      {% if job.status == 'error' %}
+                      <span style="width:60px" class="badge bg-danger">{{ job.status }}</span>
+                      {% elif job.status == 'waiting' %}
+                      <span style="width:60px" class="badge bg-secondary">{{ job.status }}</span>
+                      {% elif job.status == 'running' %}
+                      <span style="width:60px" class="badge bg-primary">{{ job.status }}</span>
+                      {% elif job.status == 'finished' %}
+                      <span style="width:60px" class="badge bg-success">{{ job.status }}</span>
+                      {% elif job.status == 'ready' %}
+                      <span style="width:60px" class="badge bg-info">{{ job.status }}</span>
+                      {% endif %}
+                  </td>
+                  <td style="text-align: center; vertical-align:middle;">
+                    <button class="btn btn-outline-primary btn-sm" onclick="on_get_result({{ job.id }})">查看结果</button>
+                  </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>#</th>
+                  <th>名称</th>
+                  <th>提交时间</th>
+                  <th>开始时间</th>
+                  <th>结束时间</th>
+                  <th style="text-align: center">运行状态</th>
+                  <th style="text-align: center">运行结果</th>
+                </tr>
+              </tfoot>
+            </table>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+              <!-- Modal content -->
+              <div class="modal-content" >
+                  <span>运行结果</span>
+                <span class="close">&times;</span>
+                <div id="job_result">
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="tab-pane fade" id="custom-tabs-four-new" role="tabpanel" aria-labelledby="custom-new-tab">
+              <div class="card card-primary">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="inputName">任务名称</label>
+                    <input type="text" class="form-control" id="inputName" placeholder="Enter Task name">
+                  </div>
+                  <div class="form-group">
+                    <label for="myfile">附件(数据)</label>
+                    <input id="myfile" type="file" style="display: none" multiple>
+                      <!--显示上传的文件名字-->
+                      <div class="input-group">
+                          <input type="text" id="FileCover" class="form-control" placeholder="Choose file..." readonly="true"
+                                 style="border-radius: 0.25rem">
+                          &nbsp;&nbsp;
+                          <div class="input-group-append" style="">
+                              <button type="button" onclick="$('input[id=myfile]').click();" style="border: none; background: none">
+                                  <i class="fa fa-folder-open input-group-text" id="browse">&nbsp;&nbsp;浏览</i>
+                              </button>
+                          </div>
+                          <div class="input-group-append">
+                              <button type="button" id="upload_btn" onclick="on_upload()" style="border: none; background: none">
+                                  <i class="nav-icon fas fa-arrow-alt-circle-up input-group-text" id="upload_status">&nbsp;&nbsp;上传</i>
+                              </button>
+                          </div>
+                      </div>
+                    <div id="show_upload"></div>
+                    <div id="file_paths" style="display: none"></div>
+                  </div>
+                  <div class="form-group" id="attachments-description-div">
+                    <label for="attachments-description">附件要求</label>
+                    <textarea id="attachments-description" class="form-control" rows="1" disabled>{{ function.attachment }}</textarea>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">优先处理</label>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button onclick="on_submit()" id="submit" class="btn btn-primary" style="float: right; width: 134px">提交</button>
+                </div>
+            </div>
+        <!-- /.card -->
+          </div>
+        </div>
+      </div>
+          <!-- /.card -->
+    </div>
+    </section>
+
+
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 1.0.0-rc
+    </div>
+    <strong>Copyright &copy; 2018-2022 <a href="https://www.sigs.tsinghua.edu.cn/">SIGS.Tsinghua</a>.</strong> All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{% static 'plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+<!-- Bootstrap -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- DataTables  & Plugins -->
+<script src="{% static 'plugins/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
+<script src="{% static 'plugins/jszip/jszip.min.js' %}"></script>
+<script src="{% static 'plugins/pdfmake/pdfmake.min.js' %}"></script>
+<script src="{% static 'plugins/pdfmake/vfs_fonts.js' %}"></script>
+<script src="{% static 'plugins/datatables-buttons/js/buttons.html5.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-buttons/js/buttons.print.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-buttons/js/buttons.colVis.min.js' %}"></script>
+<!-- HighCharts -->
+<script src="{% static 'plugins/highcharts/highcharts.js' %}"></script>
+<script src="{% static 'plugins/highcharts/modules/series-label.js' %}"></script>
+<script src="{% static 'plugins/highcharts/modules/exporting.js' %}"></script>
+<script src="{% static 'plugins/highcharts/modules/export-data.js' %}"></script>
+<script src="{% static 'plugins/highcharts/modules/accessibility.js' %}"></script>
+<!-- Ekko Lightbox -->
+<script src="{% static 'plugins/ekko-lightbox/ekko-lightbox.min.js' %}"></script>
+<script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+<!-- Filterizr-->
+<script src="{% static 'plugins/filterizr/jquery.filterizr.min.js' %}"></script>
+<!-- bs-custom-file-input -->
+<script src="{% static 'plugins/bs-custom-file-input/bs-custom-file-input.min.js' %}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Page specific script -->
+<script>
+$(function () {
+  bsCustomFileInput.init();
+});
+</script>
+
+<script>
+    $('input[id=myfile]').change(function () {
+        let myfiles = document.getElementById("myfile").files;
+        let file_index = 0;
+        let file_len = myfiles.length;
+        let myfilename = '';
+        while (file_index < file_len) {
+            myfilename = myfilename + myfiles[file_index].name + ";";
+            file_index = file_index + 1;
+        }
+        //console.log(myfiles);
+        //$('#FileCover').val($(this).val());
+        $('#FileCover').val(myfilename);
+        //拼接上传的文件名字并返回到FileCover
+    })
+</script>
+
+<script>
+    $(function () {
+        let ele_id = '{{ function.name | safe }}';
+        ele_id = ele_id.replace(/ /g, '-');
+        document.getElementById(ele_id).classList.add('active');
+        if(ele_id === 'Flow-Monitor-Based-Gauss-Process') {
+            document.getElementById('Feature-Mining').classList.add('menu-open');
+        } else if(ele_id === 'BGP-Anomaly-Detection') {
+            document.getElementById('Benchmark').classList.add('menu-open');
+        } else if(ele_id === 'Network-Traffic-Classification' || ele_id === 'Application-Identification' || ele_id === "User-Behavior-Identification") {
+            document.getElementById('Feature-Analysis').classList.add('menu-open');
+        }
+    })
+</script>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+</script>
+
+<script>
+    function on_upload(){
+        let myfiles = document.getElementById("myfile").files;//获取文件
+        let totalfile = myfiles.length;//上传的文件个数
+        if(totalfile <= 0){
+            alert('please choose some files first!');
+            return;
+        }
+        let uploadedfile = 0;//已上传的文件个数
+        let data = new FormData();//构建FormData用于Ajax发送
+        let file_index = 0;
+        //每上传一个文件，添加一个进度条
+        let addhtml = " <div id=\"backname\" class=\"col-sm-9\">fake path</div>\n" +
+            "                                    <div id=\"backurl\" style=\"display: none\"></div>\n" +
+            "                                    <div id=\"percentage\" class=\"col-sm-1\">100%</div>\n" +
+            "                                    <div class=\"clearfix\"></div>\n" +
+            "                                    <div class=\"progress progress-small\" >\n" +
+            "                                        <div id=\"percentagebar\" style=\"width:0%;\" class=\"progress-bar progress-bar-success \"></div>\n" +
+            "                                    </div> ";
+        $("#show_upload").empty();//每次点击上传按钮，把所有的进度条清空
+        document.getElementById("submit").disabled=true;
+        while (file_index < myfiles.length){
+            data.append('file', myfiles[file_index]);// 获取1个文件放入FormData中
+            let percentage = null;//上传进度
+            $.ajax({
+                type: "POST",
+                url: "/upload/",
+                data: data,
+                processData: false, // 告诉jQuery不要处理数据
+                contentType: false, // 告诉jQuery不要设置类型
+                dataType:"json",
+                xhr:function xhr(){
+                    let newbackname = "backname" + file_index;//文件名，本来想写后台返回的，懒
+                    let newbackurl = "backurl" + file_index;//每个文件上传后，返回的前台访问的url
+                    let newp = "percentage" + file_index;//每个文件的进度
+                    let newpbar = "percentagebar" + file_index;//每个进度条的名字
+                    let myfilename = myfiles[file_index].name;
+
+                    $("#show_upload").append(addhtml);
+                    $("#backname").attr('id',newbackname);
+                    $("#backurl").attr('id',newbackurl);
+                    $("#percentage").attr('id',newp);
+                    $("#percentagebar").attr('id',newpbar);
+
+                    let myxhr = $.ajaxSettings.xhr();
+                    if(myxhr.upload){
+                        myxhr.upload.addEventListener('progress',function (e) {
+                            if(e.lengthComputable){
+                                percentage = parseInt(e.loaded / e.total * 100);
+                                let now_percentage = percentage + "%";
+                                $("#"+newp).html(now_percentage);
+                                $("#"+newpbar).css({"width":now_percentage});
+                                $("#"+newbackname).html(myfilename);
+                            }
+                        },false);
+                    }
+                    return myxhr;
+                },
+                success: function(result){
+                    //每次上传完毕后得到返回值，取出返回的json值
+                    let filename = result.FileName;//后台返回新的文件名
+                    let fileurl = result.FileUrl;//后台返回的文件url
+                    let paths = document.getElementById("file_paths").innerText;
+                    paths = paths + fileurl + "%";
+                    document.getElementById("file_paths").innerText = paths;
+                    uploadedfile = uploadedfile + 1;
+                    if(uploadedfile === totalfile){
+                        $("#upload_status").text("Re Upload");
+                        document.getElementById("submit").disabled=false;
+                    }
+                }
+            });
+            file_index = file_index + 1;
+        }
+    }
+
+    function on_submit(){
+        let name = $('#inputName').val();
+        let attachments_description = $('#attachments-description').val();
+        let file_path = $('#file_paths').text();
+        let job_type = "{{ function.name | safe }}";
+        if(name.length <= 0){
+            alert('请输入任务名称！');
+        } else if(attachments_description.length > 0 && (file_path.length <= 0 && job_type.indexOf('Bandwidth') === -1)){
+            alert('请上传必要的附件（数据）！');
+        } else {
+            let formData = new FormData();
+            formData.append('name', name);
+            formData.append('file_path', file_path);
+            formData.append('job_type', job_type);
+            $.ajax({
+                url:"/add_task/",
+                type:"POST",
+                data:formData,
+                processData:false,
+                contentType:false,
+                success:function(res){
+                    let status_ = JSON.parse(res).Status
+                    if(status_ === 'ok'){
+                        alert("成功添加一个任务，请在任务列表查看。");
+                        location.reload();
+                        {#window.location.href = '/detail/' + JSON.parse(res).job_id;#}
+                    }
+                    else alert('[error] ' + status_);
+                },
+                error:function(err){
+                    alert("添加任务失败，请重试。\n[error]" + err);
+                }
+            })
+        }
+    }
+
+    function on_get_result(id){
+        let formData = new FormData();
+        formData.append('job_id', id);
+        $.ajax({
+            url:"/get_result/",
+            type:"POST",
+            data:formData,
+            processData:false,
+            contentType:false,
+            success:function(res){
+              let results = JSON.parse(res);
+              document.getElementById('job_result').innerHTML = '';
+
+              let img_idx = 0
+              for (let i = 0; i < results.length; i++){
+                  if (results[i]['type'] === 'table') {
+                      create_table('job_result', i, results[i]);
+                  } else if (results[i]['type'] === 'line chart') {
+                      create_line_chart('job_result', i, results[i]);
+                  } else if (results[i]['type'] === 'bar chart') {
+                      create_bar_chart('job_result', i, results[i]);
+                  } else if (results[i]['type'] === 'image') {
+                      if (img_idx % 2 === 0 && (i === results.length-1 || results[i+1]['type'] !== 'image')){
+                          img_idx = -1;
+                      }
+                      create_image('job_result', i, results[i], img_idx);
+                      img_idx += 1;
+                  } else if (results[i]['type'] === 'text') {
+                      create_text('job_result', i, results[i]);
+                  }
+              }
+
+                document.getElementById("myModal").style.display = "block";
+            },
+            error:function(err){
+                alert("查看任务失败！\n[error]" + err);
+            }
+        })
+    }
+
+    function create_text(parent_id, text_id, result){
+        let add_text = "" +
+        "            <div class=\"card\">\n" +
+        "              <div class=\"card-header\">\n" +
+        "                  <h3 class=\"card-title\">" + result['title'] + "</h3>\n" +
+        "              </div>\n";
+        if(result['data'] !== ""){
+            add_text = add_text +
+        "              <div class=\"card-body\">\n" +
+        "                  <div>" + result['data'] + "</div>" +
+        "              </div>\n" +
+        "            </div>"
+        } else {
+            add_text = add_text + "            </div>"
+        }
+        $('#' + parent_id).append(add_text);
+    }
+
+    function create_table(parent_id, table_id, result) {
+        let thead = "                  <thead>\n                  <tr>\n";
+        let tfoot = "                  <tfoot>\n                  <tr>\n";
+        for(let item in result['data']['thead']){
+            thead += ("                    <th>" + result['data']['thead'][item] + "</th>\n");
+            tfoot += ("                    <th>" + result['data']['thead'][item] + "</th>\n");
+        }
+        thead += "                  </tr>\n                  </thead>\n";
+        tfoot += "                  </tr>\n                  </tfoot>\n";
+        let tbody = "                  <tbody>\n";
+        for(let tr in result['data']['tbody']){
+            tbody += "                  <tr>\n"
+            for (let td in result['data']['tbody'][tr]){
+                tbody += ("                    <td>" + result['data']['tbody'][tr][td] +"</td>\n");
+            }
+            tbody += "                  </tr>\n";
+        }
+        tbody += "                  </tbody>\n";
+
+        let add_table = "" +
+            "            <div class=\"card\">\n" +
+            "              <div class=\"card-header\" style=\"\">\n" +
+            "                <h3 class=\"card-title\">" + result['title'] + "</h3>\n" +
+            "              </div>\n" +
+            "              <!-- /.card-header -->\n" +
+            "              <div class=\"card-body\">\n" +
+            "                <table id=\"table" + table_id.toString() + "\" class=\"table table-bordered table-striped\">\n" +
+            thead + tbody + tfoot +
+            "                </table>\n" +
+            ('description' in result?"                <p class=\"highcharts-description\">i.e.: " + result['description'] + "</p>\n":"") +
+            "              </div>\n" +
+            "              <!-- /.card-body -->\n" +
+            "            </div>\n" +
+            "            <!-- /.card -->";
+        $('#' + parent_id).append(add_table);
+        $('#table' + table_id.toString()).DataTable({
+          "responsive": true, "lengthChange": false, "autoWidth": false,
+        }).buttons().container();
+    }
+
+    function create_line_chart(parent_id, chart_id, result){
+        let add_chart = "" +
+            "            <div class=\"card\">\n" +
+            "              <div class=\"card-header\">\n" +
+            "                  <h3 class=\"card-title\">" + result['title'] + "</h3>\n" +
+            "              </div>\n" +
+            "              <div class=\"card-body\">\n" +
+            "                  <figure class=\"highcharts-figure\">\n" +
+            "                    <div id=\"container" + chart_id.toString() + "\"></div>\n" +
+            ('description' in result?"                <p class=\"highcharts-description\">i.e.: " + result['description'] + "</p>\n":"") +
+            "                 </figure>\n" +
+            "              </div>\n" +
+            "            </div>"
+        $('#' + parent_id).append(add_chart);
+        Highcharts.chart('container' + chart_id.toString(), {
+            title: null,
+            yAxis: 'yTitle' in result ? {title: {text: result['yTitle']}} : null,
+            xAxis: {
+                title: 'xTitle' in result ?  {text: result['xTitle']} : null,
+                categories: result['labels'],
+            },
+
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                }
+            },
+            series: result['data'],
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+
+        });
+    }
+
+    function create_bar_chart(parent_id, chart_id, result){
+        let add_chart = "" +
+            "            <div class=\"card\">\n" +
+            "              <div class=\"card-header\">\n" +
+            "                  <h3 class=\"card-title\">" + result['title'] + "</h3>\n" +
+            "              </div>\n" +
+            "              <div class=\"card-body\">\n" +
+            "                  <figure class=\"highcharts-figure\">\n" +
+            "                    <div id=\"container" + chart_id.toString() + "\"></div>\n" +
+            ('description' in result?"                <p class=\"highcharts-description\">i.e.: " + result['description'] + "</p>\n":"") +
+            "                 </figure>\n" +
+            "              </div>\n" +
+            "            </div>"
+        $('#' + parent_id).append(add_chart);
+        Highcharts.chart('container' + chart_id.toString(), {
+            chart: {type: 'column'},
+            title: null,
+            yAxis: {
+                title: {text: 'yTitle' in result ? result['yTitle'] : null},
+                min: 0,
+            },
+            xAxis: {
+                title: 'xTitle' in result ?  {text: result['xTitle']} : null,
+                categories: result['labels'],
+                crosshair: true
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: result['data']
+        });
+    }
+
+    function create_image(parent_id, image_id, result, img_idx){
+        let style =  img_idx === -1 ? "" : "display: inline-block; width: 49.3%; height: 0; padding-bottom: 50%;" +
+            (img_idx % 2 === 0 ? "margin-right: 1%" : "");
+        let add_image = "" +
+            "            <div class=\"card\" style=\"" + style + "\">\n" +
+            "              <div class=\"card-header\">\n" +
+            "                  <h3 class=\"card-title\">" + result['title'] + "</h3>\n" +
+            "              </div>\n" +
+            "              <div class=\"card-body\">\n" +
+            "                  <div style=\"text-align: center\"><img id=\"image" + image_id.toString() + "\" src=\"/media/" + result['data'] + "\"  " +
+            "alt=\"" + result['title'] + "\" style=\"max-width: 95%; max-height: 1000px\"/></div>" +
+            ('description' in result?"                <p class=\"highcharts-description\">i.e.: " + result['description'] + "</p>\n":"") +
+            "              </div>\n" +
+            "            </div>"
+        $('#' + parent_id).append(add_image);
+    }
+
+</script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

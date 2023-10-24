@@ -1,0 +1,153 @@
+nohup: ignoring input
+2022-03-11 12:13:50.986871: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2022-03-11 12:13:50.993936: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2494130000 Hz
+2022-03-11 12:13:50.994196: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55ff1d281440 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2022-03-11 12:13:50.994229: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2022-03-11 12:13:50.996313: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-03-11 12:13:50.996336: E tensorflow/stream_executor/cuda/cuda_driver.cc:318] failed call to cuInit: UNKNOWN ERROR (303)
+2022-03-11 12:13:50.996355: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (VM-24-13-centos): /proc/driver/nvidia/version does not exist
+Using TensorFlow backend.
+tf_ver: 1.15.0 gpflow_ver: 1.5.0
+avail devices:
+/device:CPU:0
+/device:XLA_CPU:0
+Traceback (most recent call last):
+  File "/tmp/pycharm_project_814/main.py", line 65, in <module>
+    filename = os.path.join(file_path, os.listdir(file_path)[0])
+FileNotFoundError: [Errno 2] No such file or directory: 'data/'
+nohup: ignoring input
+2022-03-11 12:24:08.400959: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2022-03-11 12:24:08.408524: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2494130000 Hz
+2022-03-11 12:24:08.408824: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5615bdce74e0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2022-03-11 12:24:08.408856: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2022-03-11 12:24:08.410569: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-03-11 12:24:08.410593: E tensorflow/stream_executor/cuda/cuda_driver.cc:318] failed call to cuInit: UNKNOWN ERROR (303)
+2022-03-11 12:24:08.410614: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (VM-24-13-centos): /proc/driver/nvidia/version does not exist
+Using TensorFlow backend.
+tf_ver: 1.15.0 gpflow_ver: 1.5.0
+avail devices:
+/device:CPU:0
+/device:XLA_CPU:0
+/data/Anaconda3-2021.11-Linux-x86_64.sh
+Traceback (most recent call last):
+  File "/tmp/pycharm_project_814/main.py", line 76, in <module>
+    for ts, pkt in dpkt.pcap.Reader(open(filename, 'rb')):
+  File "/root/anaconda3/envs/GPFM-3_7/lib/python3.7/site-packages/dpkt/pcap.py", line 285, in __init__
+    raise ValueError('invalid tcpdump header')
+ValueError: invalid tcpdump header
+nohup: ignoring input
+2022-03-11 12:28:07.011274: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2022-03-11 12:28:07.019394: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2494130000 Hz
+2022-03-11 12:28:07.019755: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55672e2cf370 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2022-03-11 12:28:07.019784: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2022-03-11 12:28:07.021564: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-03-11 12:28:07.021593: E tensorflow/stream_executor/cuda/cuda_driver.cc:318] failed call to cuInit: UNKNOWN ERROR (303)
+2022-03-11 12:28:07.021621: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (VM-24-13-centos): /proc/driver/nvidia/version does not exist
+Using TensorFlow backend.
+tf_ver: 1.15.0 gpflow_ver: 1.5.0
+avail devices:
+/device:CPU:0
+/device:XLA_CPU:0
+/tmp/pycharm_project_814/data/aim_chat_3a.pcap
+inducing points Z: (5, 1, 5)
+input-output dim (5(agg:5)->1)
+func __init__ consumed 0.3s
+Tasks execution time summary:
+tensorboard:	0.2136 (sec)
+checkpoint:	16.0338 (sec)
+18.93640584324073
+metrics:	[mae | rmse | mape]
+ours DGP:	 [12.762, 67.905, 3.26]
+Last baseline:	 [23.488, 94.773, 4.541]
+5s mean baseline:	 [22.919, 74.473, 3.381]
+5s median baseline:	 [15.054, 68.034, 3.826]
+ndev=1 0.8620689655172413
+ndev=2 0.8620689655172413
+ndev=3 0.8620689655172413
+nohup: ignoring input
+2022-03-11 13:34:06.034712: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2022-03-11 13:34:06.042244: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2494130000 Hz
+2022-03-11 13:34:06.042568: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x561fcd1014e0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2022-03-11 13:34:06.042597: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2022-03-11 13:34:06.044345: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-03-11 13:34:06.044371: E tensorflow/stream_executor/cuda/cuda_driver.cc:318] failed call to cuInit: UNKNOWN ERROR (303)
+2022-03-11 13:34:06.044391: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (VM-24-13-centos): /proc/driver/nvidia/version does not exist
+Using TensorFlow backend.
+tf_ver: 1.15.0 gpflow_ver: 1.5.0
+avail devices:
+/device:CPU:0
+/device:XLA_CPU:0
+/tmp/pycharm_project_814/data/aim_chat_3a.pcap
+inducing points Z: (5, 1, 5)
+input-output dim (5(agg:5)->1)
+func __init__ consumed 0.2s
+Tasks execution time summary:
+tensorboard:	0.2126 (sec)
+checkpoint:	15.8258 (sec)
+18.93640584324073
+metrics:	[mae | rmse | mape]
+ours DGP:	 [12.762, 67.905, 3.26]
+Last baseline:	 [23.488, 94.773, 4.541]
+5s mean baseline:	 [22.919, 74.473, 3.381]
+5s median baseline:	 [15.054, 68.034, 3.826]
+ndev=1 0.8620689655172413
+ndev=2 0.8620689655172413
+ndev=3 0.8620689655172413
+nohup: ignoring input
+2022-03-11 13:36:43.215440: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2022-03-11 13:36:43.222819: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2494130000 Hz
+2022-03-11 13:36:43.223273: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55a1446ddc90 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2022-03-11 13:36:43.223306: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2022-03-11 13:36:43.224963: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-03-11 13:36:43.224986: E tensorflow/stream_executor/cuda/cuda_driver.cc:318] failed call to cuInit: UNKNOWN ERROR (303)
+2022-03-11 13:36:43.225006: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (VM-24-13-centos): /proc/driver/nvidia/version does not exist
+Using TensorFlow backend.
+tf_ver: 1.15.0 gpflow_ver: 1.5.0
+avail devices:
+/device:CPU:0
+/device:XLA_CPU:0
+/tmp/pycharm_project_814/data/aim_chat_3a.pcap
+inducing points Z: (5, 1, 5)
+input-output dim (5(agg:5)->1)
+func __init__ consumed 0.2s
+Tasks execution time summary:
+tensorboard:	0.2123 (sec)
+checkpoint:	15.8551 (sec)
+18.93640584324073
+metrics:	[mae | rmse | mape]
+ours DGP:	 [12.762, 67.905, 3.26]
+Last baseline:	 [23.488, 94.773, 4.541]
+5s mean baseline:	 [22.919, 74.473, 3.381]
+5s median baseline:	 [15.054, 68.034, 3.826]
+ndev=1 0.8620689655172413
+ndev=2 0.8620689655172413
+ndev=3 0.8620689655172413
+nohup: ignoring input
+2022-03-11 13:41:01.607663: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2022-03-11 13:41:01.614972: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2494130000 Hz
+2022-03-11 13:41:01.615682: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55efe8e2cdd0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2022-03-11 13:41:01.615728: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2022-03-11 13:41:01.618884: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-03-11 13:41:01.618916: E tensorflow/stream_executor/cuda/cuda_driver.cc:318] failed call to cuInit: UNKNOWN ERROR (303)
+2022-03-11 13:41:01.618942: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (VM-24-13-centos): /proc/driver/nvidia/version does not exist
+Using TensorFlow backend.
+tf_ver: 1.15.0 gpflow_ver: 1.5.0
+avail devices:
+/device:CPU:0
+/device:XLA_CPU:0
+/tmp/pycharm_project_814/data/aim_chat_3a.pcap
+inducing points Z: (5, 1, 5)
+input-output dim (5(agg:5)->1)
+func __init__ consumed 0.2s
+Tasks execution time summary:
+tensorboard:	0.2103 (sec)
+checkpoint:	16.0081 (sec)
+18.93640584324073
+metrics:	[mae | rmse | mape]
+ours DGP:	 [12.762, 67.905, 3.26]
+Last baseline:	 [23.488, 94.773, 4.541]
+5s mean baseline:	 [22.919, 74.473, 3.381]
+5s median baseline:	 [15.054, 68.034, 3.826]
+ndev=1 0.8620689655172413
+ndev=2 0.8620689655172413
+ndev=3 0.8620689655172413
